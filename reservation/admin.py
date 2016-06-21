@@ -1,5 +1,5 @@
 from django.contrib import admin
-from reservation.models import Instrument, Instru
+from reservation.models import Instrument
 # Register your models here.
 
 class InstrumentAdmin(admin.ModelAdmin):
@@ -10,15 +10,5 @@ class InstrumentAdmin(admin.ModelAdmin):
         ]
     list_display = ('Instrument_name', 'is_subscribe')
 
-class InstruAdmin(admin.ModelAdmin):
-    fieldsets = [
-        (None, {'fields': ['name']}),
-        ('Date information', {'fields': ['starttime', 'endtime']}),
-        ('Extra information', {'fields': ['phone_num', 'extra_info']})
-        ]
-    list_display = ('name', 'starttime', 'endtime', 'extra_info')    
-
-
 
 admin.site.register(Instrument, InstrumentAdmin)
-admin.site.register(Instru, InstruAdmin)
